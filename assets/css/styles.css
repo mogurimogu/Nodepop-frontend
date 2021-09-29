@@ -1,0 +1,8 @@
+/* import de iconos de google */
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons); 
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons+Outlined); 
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons+Round); 
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons+Sharp); 
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons+Two%20Tone); 
+/* import de css de bootstrap */
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css);

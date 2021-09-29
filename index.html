@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodepop</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- extraer para insertar en todas las vistas -->
+
+    <nav class="navbar navbar-dark bg-dark text-light">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand d-flex align-items-center px-3">
+                Nodepop
+            </a>
+            <div class="col">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar..." aria-label="buscar" aria-describedby="boton-buscar">
+                        <button class="input-group-text" id="boton-buscar">
+                            <span class="material-icons-outlined">
+                                search
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <a href="" class="d-flex align-items-center px-3 text-decoration-none text-white">
+                <span class="material-icons-outlined">
+                    account_circle
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <!--  -->
+
+    <header class="bg-info bg-gradient p-3">
+        <div class="container text-center">
+            <h1>
+                Bienvenido a <span class="fw-bold">Nodepop</span>
+            </h1>
+            <p class="text-secondary fw-light fs-2">
+                tu portal de compra y venta.
+            </p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2 g-lg-3 py-3">
+
+            <!-- este trozo es el eque hay que reutilizar como plantilla para los productos -->
+
+            <article class="col">
+                <a href="" class="text-decoration-none">
+                    <div class="card">
+                        <img src="https://dummyimage.com/640x360/eaeaea" class="card-img-top" alt="alt de la imagen">
+                        <div class="card-body text-center p-2">
+                            <h1 class="card-title fs-5 py-1">Titulo producto</h1>
+                            <div class="btn btn-primary w-100">100€</div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!--  -->
+
+        </div>
+    </section>
+</body>
+
+</html>
