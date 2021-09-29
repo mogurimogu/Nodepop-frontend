@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodepop</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- extraer para insertar en todas las vistas -->
+
+    <nav class="navbar navbar-dark bg-dark text-light">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand d-flex align-items-center px-3">
+                Nodepop
+            </a>
+            <div class="col">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar..." aria-label="buscar" aria-describedby="boton-buscar">
+                        <button class="input-group-text" id="boton-buscar">
+                            <span class="material-icons-outlined">
+                                search
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <a href="" class="d-flex align-items-center px-3 text-decoration-none text-white">
+                <span class="material-icons-outlined">
+                    account_circle
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">
+                Creación de ficha de producto
+            </h1>
+            <form action="">
+                <fieldset class="card p-3 mb-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="title" id="title" placeholder="titulo del producto" required>
+                        <label for="title">Titúlo del producto</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" name="description" placeholder="Descripción del producto" id="product-description" style="height: 200px" required></textarea>
+                        <label for="product-description">Comments</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="tags" id="tags" placeholder="Tags, separar por comas">
+                        <label for="tags">Tags - Separar por comas</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" name="price" id="price" placeholder="Precio" required>
+                        <label for="price">Precio en €</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="photos" name="photos">
+                        <label class="input-group-text" for="photos">Fotos</label>
+                    </div>    
+                </fieldset>
+                <div class="mb-3 text-center">
+                    <button class="btn btn-primary" type="submit">Subir producto</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

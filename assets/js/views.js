@@ -23,6 +23,7 @@ export function product(producto) {
 //     id: 0,
 //     title: '',
 //     description: '',
+//     tags: [''],
 //     photos: [''],
 //     price: 0
 // }
