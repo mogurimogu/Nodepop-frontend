@@ -42,37 +42,26 @@
     <main class="py-5">
         <div class="container">
             <h1 class="text-center mb-5">
-                Creación de ficha de producto
+                Signup
             </h1>
             <form novalidate>
-                <fieldset class="card p-3 mb-3 col-lg-6 offset-lg-3 shadow mb-4">
+                <fieldset class="card p-3 mb-4 col-lg-4 offset-lg-4 shadow">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="title" id="title" placeholder="titulo del producto" required>
-                        <label for="title">Titúlo del producto</label>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="photos" name="photos">
-                        <label class="input-group-text" for="photos">
-                            <span class="material-icons-outlined">
-                                upload_file
-                            </span>
-                        </label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario" required>
+                        <label for="username">Nombre de usuario</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="number" class="form-control" name="price" id="price" placeholder="Precio" required>
-                        <label for="price">Precio en €</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="tags" id="tags" placeholder="Tags, separar por comas">
-                        <label for="tags">Tags - Separar por comas</label>
+                        <input type="text" class="form-control" name="password" id="password" placeholder="Contraseña" required>
+                        <label for="password">Contraseña</label>
                     </div>
                     <div class="form-floating">
-                        <textarea class="form-control" name="description" placeholder="Descripción del producto" id="product-description" style="height: 200px" required></textarea>
-                        <label for="product-description">Descripción</label>
+                        <input type="text" class="form-control" name="confirm-password" id="confirm-password" placeholder="Confirmar contraseña" required>
+                        <label for="confirm-password">Confirmar contraseña</label>
                     </div>
                 </fieldset>
                 <div class="mb-3 text-center">
-                    <button class="btn btn-primary" type="submit">Subir producto</button>
+                    <button class="btn btn-primary" type="submit">Regístrate</button>
+                    <a href="./login.html" class="btn btn-secondary" type="submit">Ingresar</a>
                 </div>
             </form>
         </div>
