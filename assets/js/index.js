@@ -1,5 +1,6 @@
 import ProductoController from './controllers/ProductoController.js'
 import LoaderController from './controllers/LoadController.js'
+import MessageController from './controllers/MessageController.js'
 
 window.addEventListener('DOMContentLoaded', function(){
     
@@ -8,6 +9,9 @@ window.addEventListener('DOMContentLoaded', function(){
     
     const loaderDiv = document.querySelector('.loader')
     new LoaderController(loaderDiv)
+
+    const errorDiv = document.querySelector('.error')
+    new MessageController(errorDiv)
 
 
 })
