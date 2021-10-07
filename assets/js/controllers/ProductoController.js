@@ -1,3 +1,4 @@
+import PubSub from "../services/PubSub.js";
 import DataService from "../services/DataService.js"
 import { productView } from "../views.js";
 
@@ -9,15 +10,16 @@ export default class ProductoController{
     }
 
     async loadProducts() {
+        PubSub.publish(PubSub.events.SHOW_LOADING)
         try {
             const productos = await DataService.getProducts()
             for (const producto of productos) {
-                const productElement = document.createElement('article')
-                productElement.innerHTML = productView(producto)
-                this.element.appendChild(productElement)
+                this.element.innerHTML = productView(producto)
             }
         } catch (error) {
-            console.log(error)
+            PubSub.publish(PubSub.events.SHOW_ERROR, error)
+        }finally{
+            PubSub.publish(PubSub.events.HIDE_LOADING)
         }
     }
 
