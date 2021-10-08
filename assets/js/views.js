@@ -13,25 +13,14 @@ export function productView(producto) {
 }
 
 export function loaderView() {
-    return `<div class="lds-ripple"><div></div><div></div></div>`
+    return `<div class="m-5"><div class="lds-ripple"><div></div><div></div></div></div>`
 }
 
 export function errorView(error) {
-    return `<div class="h1 text-uppercase mt-5">
-                UPS... Parece que algo sucedió
-            </div>
-            <div class="font-weight-light text-uppercase">${error.message}</div>
-            <div class="text-center d-flex align-items-center justify-content-center">
-                <button class="text-center btn btn-primary mt-3 d-flex align-items-center">
-                    <span class="material-icons-outlined">refresh</span> Reintentar
-                </button>
-            </div>
-            `
+    return `<div class="text-danger">${error.message}</div>`
 }
 
 export function successView() {
-    return `<div class="h1 text-uppercase mt-5">
-                Todo ha salido bien!
-            </div>`
+    return `<div class="text-success">Todo ha ido bien!</div>`
 }
 

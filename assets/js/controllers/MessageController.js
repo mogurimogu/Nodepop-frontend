@@ -16,21 +16,12 @@ export default class MessageController {
         })
     }
 
-    refreshButtonListener(){
-        const button = this.element.querySelector('button')
-        button.addEventListener('click', () => {
-            location.reload()
-        })
-    }
-
     showSuccess(message) {
         this.element.innerHTML = successView(message)
-        this.attachCloseMessageEventListener()
     }
 
     showError(message) {
         this.element.innerHTML = errorView(message)
-        this.refreshButtonListener()
     }
 
     hideError() {
