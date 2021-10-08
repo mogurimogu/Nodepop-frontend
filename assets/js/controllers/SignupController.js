@@ -50,6 +50,9 @@ export default class SignupController {
                     const password = data.get('password') // valor del input[name="password"]
                     const result = await DataService.registerUser(username, password)
                     PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registrado correctamente')
+                    setTimeout(() => {
+                        location.href = "./login.html"
+                    }, 1000);
                 } catch (error) {
                     // Cuando ocurre un error, lo grito para que se enteren otros controladores
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
