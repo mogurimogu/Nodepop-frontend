@@ -36,25 +36,3 @@ export default {
 
   },
 };
-
-
-/*
-  { 
-    suscripciones: {
-      SHOW_ERROR: [function(eventInfo) {
-            console.error('Error desde PubSub', eventInfo)
-        }]
-    },
-    
-    subscribe: function(nombreEvento, callbackAEjecutarCuandoOcurraElEvento) {
-      this.suscripciones[nombreEvento].push(callbackAEjecutarCuandoOcurraElEvento)
-    },
-
-    publish: function(nombreEvento, infoEvento) {
-      for (const callback of this.suscripciones[nombreEvento]) {
-        callback(infoEvento)
-      }
-    }
-  
-}
-*/

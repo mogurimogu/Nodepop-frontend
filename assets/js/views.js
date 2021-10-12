@@ -17,7 +17,8 @@ export function loaderView() {
 }
 
 export function errorView(error) {
-    return `<div class="text-danger">${error.message}</div>`
+    
+    return `<div class="text-danger">${error.message || error}</div>`
 }
 
 export function successView() {
