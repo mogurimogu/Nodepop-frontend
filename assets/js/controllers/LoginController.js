@@ -17,11 +17,14 @@ export default class LoginController {
                 const url = new URLSearchParams(window.location.search)
                 const next = url.get('next') || '/'
                 try {
+                    PubSub.publish(PubSub.events.SHOW_LOADING)
                     const result = await DataService.login(username, password)
                     location.href = next
                 } catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
-                }    
+                }finally{
+                    PubSub.publish(PubSub.events.HIDE_LOADING)
+                }
             }else{
                 PubSub.publish(PubSub.events.SHOW_ERROR, 'Ambos campos son obligatorios')
             }

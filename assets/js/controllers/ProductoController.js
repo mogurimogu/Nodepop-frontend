@@ -13,8 +13,15 @@ export default class ProductoController{
         PubSub.publish(PubSub.events.SHOW_LOADING)
         try {
             const productos = await DataService.getProducts()
+            console.log(productos)
+            if(productos.length === 0){
+                PubSub.publish(PubSub.events.SHOW_ERROR, 'No existe ningún anuncio')
+            }
             for (const producto of productos) {
-                this.element.innerHTML = productView(producto)
+                const productElement = document.createElement('article')
+                productElement.classList.add('col')
+                productElement.innerHTML = productView(producto)
+                this.element.appendChild(productElement)
             }
         } catch (error) {
             PubSub.publish(PubSub.events.SHOW_ERROR, error)

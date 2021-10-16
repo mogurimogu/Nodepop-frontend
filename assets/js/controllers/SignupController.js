@@ -44,6 +44,7 @@ export default class SignupController {
 
             // comprobar si el formulario valida
             if (this.checkValidity()) {
+                PubSub.publish(PubSub.events.SHOW_LOADING)
                 try {
                     const data = new FormData(this)
                     const username = data.get('username') // valor del input[name="username"]
@@ -56,6 +57,8 @@ export default class SignupController {
                 } catch (error) {
                     // Cuando ocurre un error, lo grito para que se enteren otros controladores
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
+                }finally{
+                    PubSub.publish(PubSub.events.HIDE_LOADING)
                 }
             } else {
                 // si no valida, mostrar un mensaje de error

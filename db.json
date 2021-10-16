@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "username": "Luis",
+      "password": "$2b$10$gktrQEO.OQ8G7Qv/I83Su.5GqwLfO.k2V4jxh0dIF2tZYyGdDC7pm",
+      "id": 1
+    },
+    {
+      "username": "moguri",
+      "password": "$2b$10$MwdctLCWZjmUC7nlBtTYX.jQjvkw4cXTcNpyFR4lrPYq/ZTmIeE7q",
+      "id": 2
+    },
+    {
+      "username": "mogu",
+      "password": "$2b$10$MwdctLCWZjmUC7nlBtTYX.jQjvkw4cXTcNpyFR4lrPYq/ZTmIeE7q",
+      "id": 3
+    },
+    {
+      "username": "luisja",
+      "password": "$2b$10$AYoB5tR2io.gY0mEhENuBOmgpeGL7Cx.zZBOZjuQI8WEfdBvADedi",
+      "id": 4
+    }
+  ],
+  "anuncios": [
+    {
+      "title": "Divoom Ditoo",
+      "photo": "https://promejores.com/wp-content/uploads/2020/11/divoom-ditoo-pokemon.jpg",
+      "price": "80",
+      "tags": [
+        "gadget",
+        " sonido",
+        " multimedia"
+      ],
+      "description": "<strong>Sonido envolvente de 360 °</strong>\nDitoo ofrece el potente sonido de 360 ° a través de su controlador afinado y su radiador de graves alucinante. El sonido envolvente sin interrupciones proporciona una experiencia de audio envolvente que cubre toda la habitación y el espacio.",
+      "userId": 1,
+      "updatedAt": "2021-10-12T19:16:05.270Z",
+      "id": 1
+    },
+    {
+      "title": "Oldspice",
+      "photo": "https://i.giphy.com/media/zrcH6qNGE4rG8/giphy.webp",
+      "price": "3",
+      "tags": [
+        "cuidado personal",
+        " lifestyle"
+      ],
+      "description": "Mira tu hombre, mírame a mi, ahora voy en caballo",
+      "userId": 3,
+      "updatedAt": "2021-10-13T12:30:09.454Z",
+      "id": 2
+    },
+    {
+      "title": "Coche fantástico",
+      "photo": "https://media3.giphy.com/media/7STA5KhSsBGFq1CULw/giphy.gif?cid=ecf05e471va7lbccp1nt3hfifiv851dk2d38miiyv2o4mo78&rid=giphy.gif&ct=g",
+      "price": "100000",
+      "tags": [
+        "motor",
+        " vehículos"
+      ],
+      "description": "Nada como el coche fantástico como para darse un paseo por la ciudad. Este vehículo pasa todos las normativas de las ciudades ya que es un vehículo de emisiones 0. Tan solo necesita 15 minutos de recarga para funcioanr durante 20000km.\r\n",
+      "userId": 3,
+      "updatedAt": "2021-10-13T12:36:04.098Z",
+      "id": 3
+    }
+  ]
+}

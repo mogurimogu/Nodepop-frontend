@@ -20,7 +20,7 @@
                 Nodepop
             </a>
             <div class="col">
-                <form>
+                <form novalidate>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Buscar..." aria-label="buscar" aria-describedby="boton-buscar">
                         <button class="input-group-text" id="boton-buscar">
@@ -44,17 +44,17 @@
             <h1 class="text-center mb-5">
                 Creación de ficha de producto
             </h1>
-            <form novalidate>
+            <form novalidate id="create-product">
                 <fieldset class="card p-3 mb-3 col-lg-6 offset-lg-3 shadow mb-4">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" name="title" id="title" placeholder="titulo del producto" required>
                         <label for="title">Titúlo del producto</label>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="photos" name="photos">
-                        <label class="input-group-text" for="photos">
+                        <input type="text" class="form-control" id="photo" name="photo" placeholder="inserte url de la imágen">
+                        <label class="input-group-text" for="photo">
                             <span class="material-icons-outlined">
-                                upload_file
+                                image
                             </span>
                         </label>
                     </div>
@@ -71,12 +71,15 @@
                         <label for="product-description">Descripción</label>
                     </div>
                 </fieldset>
+                <div class="error text-center text-danger my-4"></div>
+
                 <div class="mb-3 text-center">
                     <button class="btn btn-primary" type="submit">Subir producto</button>
                 </div>
             </form>
         </div>
     </main>
+    <script type="module" src="./assets/js/create.js" type="module"></script>
 
 </body>
 

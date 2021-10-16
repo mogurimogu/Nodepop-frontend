@@ -1,18 +1,7 @@
 export default{
-
-    get: async function(url, errorMessage){
-        const response = await fetch(url)
-        if(response.ok){
-            const data = await response.json()
-            return data
-        }else{
-            throw new Error(errorMessage)
-        }
-    },
-
-    post: async function(url, body) {
+    request: async function(method, url, body) {
         const requestConfig = {
-            method: 'POST',
+            method: method,
             headers: {
                 'content-type': 'application/json'
             },
@@ -20,6 +9,7 @@ export default{
         }
         if (this.isAuthenticed()) {
             const token = localStorage.getItem('AUTH_TOKEN')
+            // requestConfig.headers.Authorization = `Bearer ${token}`
             requestConfig.headers['Authorization'] = `Bearer ${token}`
         }
         const response = await fetch(url, requestConfig)
@@ -34,11 +24,63 @@ export default{
             throw error
         }
     },
+
+
+    get: async function(url, errorMessage){
+        const response = await fetch(url)
+        if(response.ok){
+            const data = await response.json()
+            return data
+        }else{
+            throw new Error(errorMessage)
+        }
+    },
+
+    post: async function(url, body) {
+        return await this.request('POST', url, body)
+    },
+
+    put: async function(url, body) {
+        return await this.request('PUT', url, body)
+    },
+
+    delete: async function(url, body={}) {
+        return await this.request('DELETE', url, body)
+    },
     
-    getProducts: async function(){
-        const url = 'http://localhost:8000/api/anuncios'
-        const errorMessage = 'Error al obtener los Productos'
-        return await this.get(url, errorMessage)
+    
+    parseProduct: function(product) {
+        product.date = product.date || product.updatedAt
+        product.description = product.description.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        product.author = product.user.username
+        product.canBeDeleted = product.userId === this.getAuthUserId()
+        return product
+    },
+
+    getProducts: async function() {
+        const url = 'http://localhost:8000/api/anuncios?_expand=user'
+        const response = await fetch(url)
+        if (response.ok) {
+            const productos = await response.json()
+            return productos.map(producto => this.parseProduct(producto))
+        } else {
+            throw new Error('Error al obtener los Productos')
+        }
+    },
+
+    getProductsDetail: async function(productID) {
+        const url = `http://localhost:8000/api/anuncios/${productID}?_expand=user`
+        const response = await fetch(url)
+        if (response.ok) {
+            const producto = await response.json()
+            return this.parseProduct(producto)
+        } else {
+            if (response.status === 404) {
+                return null
+            } else {
+                throw new Error('Error al cargar el producto')
+            }
+        }
     },
 
     registerUser: async function(username, password) {
@@ -53,15 +95,39 @@ export default{
         localStorage.setItem('AUTH_TOKEN', token)
     },
 
-    createTweet: async function(text) {
-        const url = 'http://localhost:8000/api/tweets'
-        return this.post(url, { message: text })
+    createProduct: async function(productData) {
+        const url = 'http://localhost:8000/api/anuncios'
+        return this.post(url, productData)
     },
 
     isAuthenticed: function() {
         return localStorage.getItem('AUTH_TOKEN') !== null
-    }
+    },
 
+    getAuthUserId: function() {
+        const token = localStorage.getItem('AUTH_TOKEN')
+        if (token === null) {
+            return null
+        }
+        const b64Parts = token.split('.')
+        if (b64Parts.length !== 3) {
+            return null
+        }
+        const b64Data = b64Parts[1]
+        try {
+            const userJSON = atob(b64Data)
+            const user = JSON.parse(userJSON)
+            return user.userId
+        } catch (error) {
+            console.error('Error while decoding JWT Token', error)
+            return null
+        }
+    },
+
+    deleteProduct: async function(productID) {
+        const url = `http://localhost:8000/api/anuncios/${productID}`
+        return await this.delete(url)
+    },
 
 
 }
