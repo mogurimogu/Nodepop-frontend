@@ -61,6 +61,18 @@
       "userId": 3,
       "updatedAt": "2021-10-13T12:36:04.098Z",
       "id": 3
+    },
+    {
+      "title": "<strong style=\"color:pink\">Hola</strong>",
+      "photo": "https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/LUOOHUM2OVEEXG7ZTRSNI6XWLY.png",
+      "price": "0",
+      "tags": [
+        "<strong style=\"color:pink\">Hola</strong>"
+      ],
+      "description": "<strong style=\"color:pink\">Hola</strong>",
+      "userId": 3,
+      "updatedAt": "2021-11-09T11:13:56.323Z",
+      "id": 4
     }
   ]
 }
